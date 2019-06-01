@@ -1,0 +1,21 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "umd",
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "Android >= 4.2",
+            "ios >= 9"
+          ]
+        },
+        "useBuiltIns": "usage"
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
+}
