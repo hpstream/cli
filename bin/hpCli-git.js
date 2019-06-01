@@ -30,6 +30,11 @@ download(giturl,
       // 下载的模板存放在一个临时路径中，下载完成后，可以向下通知这个临时路径，以便后续处理
       spinner.succeed();
       console.log(logSymbols.success, chalk.green('下载成功'));
+      shelljs.cd('.download-temp')
+      if (shelljs.exec('sudo cnpm install').code !== 0) {
+        shelljs.echo('npm install 完成');
+        shelljs.exit(1);
+      }
     }
   })
 
