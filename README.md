@@ -1,11 +1,11 @@
 # 自定义搭建cli脚手架
 
-> 前端开发攻城狮应该都知道一个叫cli脚手架的东西，他可以简化我们对工程的配置。使我们专心于业务代码。不需要过多于在在乎工程搭建的细节。这篇文章带你了解cli的原理与脚手架的制作。
+> 前端开发攻城狮应该都知道一个叫cli脚手架的工具，他可以简化我们对工程的配置。使我们专心于业务代码。不需要过多于在乎工程搭建的细节。这篇文章带你了解cli的原理与脚手架的制作。
 
 **
 <a name="yiUBA"></a>
 # 原理
- 不管什么语言都有自己的包管理工具，js也一样。它的包管理工具叫npm。在建立包的时候最重要的一个文件叫做package.json。这个文件有一个bin字段，主要是它的能力。如果不了解，请点击[这里](https://javascript.ruanyifeng.com/nodejs/packagejson.html)。
+ 不管什么语言都有自己的包管理工具，js也一样。它的包管理工具叫npm。在建立包的时候最重要的一个文件叫做package.json。这个文件有一个bin字段，主要是它的能力。如果不了解，请点击[这里](https://javascript.ruanyifeng.com/nodejs/packagejson.html)，下面是简单的解释。
 
 ![image.png](https://cdn.nlark.com/yuque/0/2019/png/119800/1559397729783-07caec86-2999-416a-975d-b9c65b0e02f7.png#align=left&display=inline&height=603&name=image.png&originHeight=1206&originWidth=1836&size=444105&status=done&width=918)
 
@@ -47,10 +47,10 @@ console.log('hello word!');
 
 
 
-**好了，完成长城的第一步已经完成了。结下来实现一个比较完成的功能，去远程拉去被人仓库的代码。并且自动执行npm install。**
+**好了，万里长城的第一步已经完成了。结下来实现一个比较完整的功能，去远程拉去被人仓库的代码。并且自动执行npm install。**
 
 
-> 在接下来实现以前我们先来了解一些常用的脚手架工具。
+> 在完成实现功能之前，我们先来了解一些常用的脚手架工具。
 
 
 1. commander 命令行控制工具
@@ -90,9 +90,9 @@ console.log('  - %s cheese', program.cheese);
 
 <a name="k7xii"></a>
 ## shelljs
-应用这个库可以使用linux命令操作系统，主要是抹平了个个平台的差异，非常好用。使用时参考文[文档]()就可以了。
+应用这个库可以使用linux命令操作系统，主要是兼容个个平台的差异，非常好用。使用时参考文[文档]()就可以了。
 
-**剩下的介个插件比较简单这里不做介绍，不过名字已经写出来了，大家想了解可以自己查看**。
+**剩下的插件比较简单这里不做介绍，不过名字已经写出来了，可以自行查阅了解**。
 
 
 <a name="2dAqW"></a>
@@ -102,7 +102,7 @@ console.log('  - %s cheese', program.cheese);
 ## 实现步骤
 1.去远程拉去仓库。<br />2.拉去远仓库，后执行npm install
 
-> 说起来简单，但是实现起来还是要费一番功夫的。这个就像问把大象放在冰箱里需要三个步骤，**第一步打开冰箱，第二步，把大象放进去，第三步骤，把冰箱门关上。**结束。但是现实你放个大象给我看看～～。理论很简单，现实很骨干。开始介绍代码把
+> 说起来简单，但是实现起来还是要费一番功夫的。这个就像问把大象放在冰箱里需要三个步骤，**第一步打开冰箱，第二步，把大象放进去，第三步，把冰箱门关上。**结束。但是现实你放个大象给我看看～～。理论很简单，现实很骨干。开始介绍代码吧。
 
 
 目录结构：<br />![image.png](https://cdn.nlark.com/yuque/0/2019/png/119800/1559402304034-06d0acc3-c986-4677-9c85-809c8b646d94.png#align=left&display=inline&height=102&name=image.png&originHeight=204&originWidth=688&size=20568&status=done&width=344)<br />package.json
